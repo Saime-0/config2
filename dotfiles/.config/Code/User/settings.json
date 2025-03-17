@@ -1,0 +1,81 @@
+{
+    "cSpell.language": "en,ru",
+    "cSpell.userWords": [],
+    "chat.editor.fontSize": 17,
+    "debug.console.fontSize": 17,
+    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 17,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.minimap.autohide": true,
+    "editor.minimap.enabled": false,
+    "editor.tokenColorCustomizations": {
+      "comments": "#38483D",
+      "functions": "#7c4141",
+      "keywords": "#69472C",
+      "numbers": "#6897BB",
+      "strings": "#454479",
+      "textMateRules": [
+        {
+          "scope": "meta.function-call",
+          "settings": {
+            "foreground": "#405469"
+          }
+        },
+        {
+          "scope": "comment.block",
+          "settings": {
+            "foreground": "#2D3828"
+          }
+        },
+        {
+          "scope": "comment.block.documentation",
+          "settings": {
+            "fontStyle": "italic",
+            "foreground": "#253423"
+          }
+        },
+        {
+          "scope": "invalid.deprecated",
+          "settings": {
+            "fontStyle": "strikethrough"
+          }
+        }
+      ],
+      "types": "#769AA5",
+      "variables": "#405569"
+    },
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+      "**/__debug_bin*": true
+    },
+    "markdown.preview.fontSize": 17,
+    "nix.enableLanguageServer": true,
+    "nix.formatterPath": "nixfmt",
+    "nix.serverPath": "nil",
+    "nix.serverSettings": {
+      "nil": {
+        "formatting": {
+          "command": [
+            "nixfmt"
+          ]
+        }
+      }
+    },
+    "path-autocomplete.triggerOutsideStrings": true,
+    "scm.alwaysShowRepositories": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "symbols.hidesExplorerArrows": false,
+    "terminal.integrated.fontSize": 17,
+    "window.zoomLevel": 0,
+    "window.zoomPerWindow": false,
+    "workbench.colorCustomizations": {
+      "editor.background": "#000",
+      "editor.foreground": "#69472C",
+      "editor.lineHighlightBackground": "#0c0c0c",
+      "editor.selectionBackground": "#0e141e",
+      "editorCursor.foreground": "#bbbbbb",
+      "terminal.background": "#111"
+    },
+    "workbench.colorTheme": "Kanagawa Dragon",
+    "workbench.iconTheme": "vscode-great-icons"
+  }
