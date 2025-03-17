@@ -2,7 +2,7 @@
 
 echo "Checking if the device exists ..."
 if [ ! -e "$DEVICE" ]; then
-  echo "Error: Device $DEVICE not found."
+  echo "Error: Device '$DEVICE' (\$DEVICE) not found."
   exit 1
 fi
 
