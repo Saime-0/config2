@@ -7,4 +7,4 @@ chmod 600 ${swapfile}
 mkswap ${swapfile}
 swapon ${swapfile}
 
-echo "Создан swapfile."
+echo "Created swapfile."

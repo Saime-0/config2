@@ -4,18 +4,18 @@
 STEPS_DIR="install-by-step"
 
 # Переход в директорию с шагами
-cd "$STEPS_DIR" || { echo "Ошибка: директория $STEPS_DIR не найдена."; exit 1; }
+cd "$STEPS_DIR" || { echo "Error: The $STEPS_DIR directory was not found."; exit 1; }
 
 # Проход по всем файлам в директории, отсортированным по имени
 for script in $(ls -v *.sh); do
-    echo "Запуск скрипта: $script"
+    echo "Running the script: $script"
     # Выполнение скрипта
     bash "$script"
     # Проверка кода завершения
     if [ $? -ne 0 ]; then
-        echo "Ошибка: скрипт $script завершился с ошибкой. Выполнение остановлено."
+        echo "Error: the $script script failed with an error. Execution stopped."
         exit 1
     fi
 done
 
-echo "Все шаги выполнены успешно."
+echo "All the steps are completed successfully."
