@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo "Checking if the device exists ..."
 if [ ! -e "$DEVICE" ]; then
   echo "Error: Device '$DEVICE' (\$DEVICE) not found."
@@ -10,10 +12,10 @@ echo "Clearing the partition table ..."
 sfdisk --delete $DEVICE
 
 echo "Create partitions ..."
-sfdisk $DEVICE << EOF
+sfdisk "$DEVICE" << EOF
 label: gpt
-,512M,EF00
-,,8300
+size=500M, type=EF00
+type=8300
 EOF
 
 echo "Formatting partitions ..."
