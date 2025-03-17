@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Директория с шагами
-STEPS_DIR="install-by-step"
+STEPS_DIR="install"
 
 # Переход в директорию с шагами
 cd "$STEPS_DIR" || { echo "Error: The $STEPS_DIR directory was not found."; exit 1; }
