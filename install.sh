@@ -1,29 +1,18 @@
 #!/bin/bash
 
-# Директория с шагами
-STEPS_DIR="install"
+scripts_dir="install"
 
-# Переход в директорию с шагами
-cd "$STEPS_DIR" || { echo "Error: The $STEPS_DIR directory was not found."; exit 1; }
-
-gen_script=""
+cd "$scripts_dir" || { echo "Error: The '$scripts_dir' directory was not found."; exit 1; }
 
 # Проход по всем файлам в директории, отсортированным по имени
-for script_file in $(ls -v *.sh); do
-    script=$(cat $script)
-    gen_script="
-    ${gen_script}
-    echo "Running the script: $script_file"
-    ${script}
+for script in $(ls -v *.sh); do
+    echo "Running the script: $script"
+    bash "$script"
     # Проверка кода завершения
     if [ $? -ne 0 ]; then
-        echo "Error: the $script_file script failed with an error. Execution stopped."
+        echo "Error: the $script script failed with an error. Execution stopped."
         exit 1
     fi
-    "
 done
-
-# Выполнение скрипта
-bash "$gen_script"
 
 echo "All the steps are completed successfully."
