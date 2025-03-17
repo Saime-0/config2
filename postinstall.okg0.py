@@ -1,9 +1,12 @@
+#!/bin/python
+
 from enum import Enum
 # class Distr(Enum):
 #     BASE = 1
 #     XFCE = 
 
 
-import pkgs;
+import pkgs
 
 pkgs.vscode.install()
+pkgs.vscode.setup()
