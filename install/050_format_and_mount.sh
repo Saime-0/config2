@@ -12,11 +12,11 @@ echo "Clearing the partition table ..."
 sfdisk --delete $DEVICE
 
 echo "Create partitions ..."
-sfdisk "$DEVICE" << EOF
-label: gpt
-size=500M, type=EF00
-type=8300
-EOF
+parted --script ${DEVICE} -- \
+       mklabel gpt \
+       mkpart esp fat32 1MiB 512MiB \
+       mkpart primary 512MiB 100% \
+       set 1 boot on
 
 echo "Formatting partitions ..."
 mkfs.fat -F 32 ${DEVICE}1  # EFI раздел
