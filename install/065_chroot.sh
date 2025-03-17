@@ -7,7 +7,7 @@ mkdir /mnt$scripts_dir
 parent_dir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
 cp $parent_dir/065_chroot/* /mnt$scripts_dir
 
-for script in $(ls *.sh); do
+for script in $(ls /mnt$scripts_dir/*.sh); do
     echo "Running the script: $script"
     arch-chroot /mnt /bin/bash -c $scripts_dir/$script
     # bash $scripts_dir/$script
