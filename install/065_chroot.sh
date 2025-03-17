@@ -2,18 +2,8 @@
 
 set -e
 
-scripts_dir="/tmp/install$(date +%s)"
-mkdir /mnt$scripts_dir
+scripts_dir="/mnt/root/tmp/install$(date +%s)"
+mkdir $scripts_dir
 parent_dir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
-cp $parent_dir/065_chroot/* /mnt$scripts_dir
-
-for script in $(ls /mnt$scripts_dir); do
-    echo "Running the script: $script"
-    arch-chroot /mnt bash -c /mnt$scripts_dir/$script
-    # bash $scripts_dir/$script
-    # Проверка кода завершения
-    if [ $? -ne 0 ]; then
-        echo "Error: the $script script failed with an error. Execution stopped."
-        exit 1
-    fi
-done
+cp $parent_dir/065_chroot/* $scripts_dir
+arch-chroot /mnt bash -c "${scripts_dir}/*"
