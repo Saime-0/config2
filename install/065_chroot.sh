@@ -2,7 +2,7 @@
 
 set -e
 
-scripts_dir = "/mnt/tmp/install$(date +%s)"
+scripts_dir="/mnt/tmp/install$(date +%s)"
 mkdir $scripts_dir
 cp ./065_system/* $scripts_dir
 arch-chroot /mnt ${scripts_dir}/*
