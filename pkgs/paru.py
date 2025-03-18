@@ -25,6 +25,13 @@ class paru:
         return "paru"
         
     def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: os.path = "/") -> bool:
-        print(f"{id} -> install: ok")
+        cmd = [bin(), "-Sy"]
+        if no_confirm: cmd.append("--noconfirm")
+        if needed: cmd.append("--needed")
+        if sysroot: cmd.append(f"--sysroot={sysroot}")
+        subprocess.run(cmd)
+
+    def setup():
+        print("paru:setup:TODO")
 
 from pkgs.list import list as pkgs_list; pkgs_list.append(paru)
