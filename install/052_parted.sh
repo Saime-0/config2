@@ -12,10 +12,9 @@ fi
 # sfdisk --delete $DEVICE
 
 echo "Create partitions ..."
-parted --script ${DEVICE} -- \
-            mklabel gpt \ 
-            mkpart esp fat32 1MiB 512MiB \
-            mkpart primary 512MiB 100% \
-            set 1 boot on
+parted --script ${DEVICE} -- mklabel gpt
+parted --script ${DEVICE} -- mkpart esp fat32 1MiB 512MiB
+parted --script ${DEVICE} -- mkpart primary 512MiB 100%
+parted --script ${DEVICE} -- set 1 boot on
 
 echo "The disk partition is complete."
