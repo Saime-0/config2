@@ -14,7 +14,8 @@ class pacman:
         if no_confirm: cmd.append("--noconfirm")
         if needed: cmd.append("--needed")
         if sysroot: cmd.append(f"--sysroot={sysroot}")
-        subprocess.run(cmd)
+        print(cmd)
+        subprocess.run(cmd, shell=True, check=True, text=True)
 
     def setup():
         print("pacman:setup:TODO")
