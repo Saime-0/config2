@@ -25,7 +25,7 @@ class paru:
         return "paru"
         
     def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: os.path = "/") -> bool:
-        cmd = [bin(), "-Sy"]
+        cmd = [paru.bin(), "-Sy"]
         if no_confirm: cmd.append("--noconfirm")
         if needed: cmd.append("--needed")
         if sysroot: cmd.append(f"--sysroot={sysroot}")
