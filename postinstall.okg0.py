@@ -9,7 +9,6 @@ pkgs.pacman.install(
     packages=pkgs.base_packages,
     no_confirm=True,
     needed=True,
-    sysroot=os.path("/mnt"),
 )
 
 pkgs.paru.get()
@@ -24,7 +23,6 @@ pkgs.paru.install(
     packages=pkgs_for_install,
     no_confirm=True,
     needed=True,
-    sysroot=os.path("/mnt"),
 )
 
 for p in pkgs_for_install:

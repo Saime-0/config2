@@ -9,8 +9,7 @@ class paru:
             return subprocess.run(command, shell=True, check=True, text=True)
         try:
             run_command("cd /tmp")
-            run_command("sudo pacman -S --needed base-devel")
-            dir=str(int(time.time()))
+            dir=f"paru{int(time.time())}"
             run_command(f"git clone https://aur.archlinux.org/paru.git {dir}")
             run_command(f"cd {dir}")
             run_command("makepkg -si")
@@ -24,7 +23,7 @@ class paru:
     def bin()->str:
         return "paru"
         
-    def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: os.path = "/") -> bool:
+    def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: str = "/") -> bool:
         cmd = [paru.bin(), "-Sy"]
         if no_confirm: cmd.append("--noconfirm")
         if needed: cmd.append("--needed")
