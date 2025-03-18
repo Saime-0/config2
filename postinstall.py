@@ -28,12 +28,12 @@ opt_pkgs = [
 ]
 opt_pkgs_names = [
     "ly",
-    
+
     "go",
     "delve",
     "go-mockery",
     "gopls",
-    "jdk",
+    "jdk-openjdk",
 
     "qbittorrent",
     "golangci-lint",
