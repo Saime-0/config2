@@ -26,10 +26,9 @@ opt_pkgs = [
     terminus_font,
     alacritty,
     helix,
+    ly,
 ]
 opt_pkgs_names = [
-    "ly",
-
     "go",
     "delve",
     "mockery",

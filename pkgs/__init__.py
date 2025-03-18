@@ -8,3 +8,4 @@ from pkgs.fonts import pkg_names as fonts_pkg_names
 from pkgs.terminus_font import terminus_font
 from pkgs.xfce import xfce
 from pkgs.alacritty import alacritty
+from pkgs.ly import ly
