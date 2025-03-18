@@ -1,3 +1,2 @@
 class helix:
-    def id() -> str:
-        return "helix"
+    pkg_name = "helix"

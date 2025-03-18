@@ -1,9 +1,10 @@
 import os
-from lib.package import Package
 import subprocess
 import time
 
 class paru:
+    pkg_name = "paru"
+
     def get():
         def run_command(command):
             return subprocess.run(command, shell=True, check=True, text=True)
@@ -15,13 +16,11 @@ class paru:
         except subprocess.CalledProcessError as e:
             print(f"Ошибка при выполнении команды: {e}")    
 
-    def id()->str:
-        return "paru"
     
     def bin()->str:
         return "paru"
         
-    def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: str = "/") -> bool:
+    def install(packages: list[str], no_confirm: bool = False, needed: bool = False, sysroot: str = "/") -> bool:
         cmd = [paru.bin(), "-Sy", ' '.join(packages)]
         if no_confirm: cmd.append("--noconfirm")
         if needed: cmd.append("--needed")

@@ -11,7 +11,7 @@ def get_package_manager(module) -> Type[PackageManager]:
     for name, obj in inspect.getmembers(module):
         if name.startswith("__"):
             continue
-        if inspect.isclass(obj) and is_pkg_mgr(obj) and which(obj.bin()):
+        if inspect.isclass(obj) and is_pkg_mgr(obj) and which(obj.bin):
             return obj
         
     raise RuntimeError("Ни один подходящий менеджер пакетов не найден в системе.")

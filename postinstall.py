@@ -1,15 +1,11 @@
 #!/bin/python
 
 import pkgs
-import lib
-import os
+# import lib
+# import os
 
 pkgs.pacman.setup()
-pkgs.pacman.install(
-    packages=pkgs.base_packages,
-    no_confirm=True,
-    needed=True,
-)
+pkgs.pacman.install(pkgs.base_pkg_names)
 
 # login="okg0"
 # lib.create_user(
@@ -17,17 +13,12 @@ pkgs.pacman.install(
 #     groups=["sudo", "networkmanager", "uinput"]
 # )
 
-pkgs.paru.get()
-pkgs.paru.setup()
 pkgs_for_install = [
     pkgs.vscode,
-    # pkgs.dummy
 ]
-pkgs.paru.install(
-    packages=pkgs_for_install,
-    no_confirm=True,
-    needed=True,
-)
+pkgs.paru.get()
+pkgs.paru.setup()
+pkgs.paru.install([p.pkg_name for p in pkgs_for_install])
 
 for p in pkgs_for_install:
     if hasattr(p, 'setup') and callable(getattr(p, 'setup')):

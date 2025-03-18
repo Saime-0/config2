@@ -1,16 +1,12 @@
 import os
 import subprocess
-from lib.package import Package
 
 class pacman:
-    def id()->str:
-        return "pacman"
-    
-    def bin()->str:
-        return "pacman"
+    pkg_name = "pacman"
+    bin = "pacman"
         
-    def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: os.path = "/") -> bool:
-        cmd = ["sudo", pacman.bin(), "-Sy", ' '.join(packages)]
+    def install(packages: list[str], no_confirm: bool = False, needed: bool = False, sysroot: os.path = "/") -> bool:
+        cmd = ["sudo", pacman.bin, "-Sy", ' '.join(packages)]
         if no_confirm: cmd.append("--noconfirm")
         if needed: cmd.append("--needed")
         if sysroot: cmd.append(f"--sysroot={sysroot}")

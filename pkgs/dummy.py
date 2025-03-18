@@ -1,6 +1,5 @@
 class dummy:
-    def id() -> str:
-        return "dummy"
+    pkg_name = "dummy"
 
     def setup():
         print("dummy: setup: ok")

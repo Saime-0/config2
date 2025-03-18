@@ -25,8 +25,7 @@ config_dir=os.path.expanduser("~/.config/Code/User")
 config_file=os.path.join(config_dir,"settings.json")
 # from  lib.package import Package
 class vscode():
-    def id() -> str:
-        return "vscode"
+    pkg_name = "vscode"
 
     def setup():
         # Скопировать конфиг
