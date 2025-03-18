@@ -29,6 +29,8 @@ opt_pkgs = [
     ly,
 ]
 opt_pkgs_names = [
+    "xorg"
+
     "go",
     "delve",
     "mockery",
