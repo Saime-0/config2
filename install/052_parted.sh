@@ -8,8 +8,8 @@ if [ ! -e "$DEVICE" ]; then
   exit 1
 fi
 
-echo "Clearing the partition table ..."
-sfdisk --delete $DEVICE
+# echo "Clearing the partition table ..."
+# sfdisk --delete $DEVICE
 
 echo "Create partitions ..."
 parted --script ${DEVICE} -- \
