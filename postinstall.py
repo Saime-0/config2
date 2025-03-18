@@ -1,25 +1,23 @@
 #!/bin/python
 
 import pkgs
-# import lib
-# import os
 
 pkgs.pacman.setup()
+
+# Install base packages
 pkgs.pacman.install(pkgs.base_pkg_names)
 
-# login="okg0"
-# lib.create_user(
-#     login=login,
-#     groups=["sudo", "networkmanager", "uinput"]
-# )
-
-pkgs_for_install = [
-    pkgs.vscode,
-]
+# Get pacman wrapper
 pkgs.paru.get()
 pkgs.paru.setup()
-pkgs.paru.install([p.pkg_name for p in pkgs_for_install])
 
-for p in pkgs_for_install:
+# Install opt packages
+opt_pkgs = [
+    pkgs.vscode,
+]
+pkgs.paru.install([p.pkg_name for p in opt_pkgs])
+
+# Setup opt packages
+for p in opt_pkgs:
     if hasattr(p, 'setup') and callable(getattr(p, 'setup')):
         p.setup()

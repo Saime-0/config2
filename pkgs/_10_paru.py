@@ -20,7 +20,12 @@ class paru:
     def bin()->str:
         return "paru"
         
-    def install(packages: list[str], no_confirm: bool = False, needed: bool = False, sysroot: str = "/") -> bool:
+    def install(
+                packages: list[str],
+                no_confirm: bool = True, 
+                needed: bool = True,
+                sysroot: str = "/",
+                ) -> bool:
         cmd = [paru.bin(), "-Sy", ' '.join(packages)]
         if no_confirm: cmd.append("--noconfirm")
         if needed: cmd.append("--needed")
@@ -29,5 +34,3 @@ class paru:
 
     def setup():
         print("paru:setup:TODO")
-
-from pkgs.list import list as pkgs_list; pkgs_list.append(paru)

@@ -5,5 +5,10 @@ class PackageManager:
     def bin() -> str:
         raise NotImplementedError
     
-    def install(self, packages: list[str], no_confirm: bool = False, needed: bool = False, sysroot: os.path = os.path.abspath("/")) -> bool:
+    def install(
+                packages: list[str],
+                no_confirm: bool = True, 
+                needed: bool = True,
+                sysroot: str = "/",
+                ) -> bool:
         raise NotImplementedError
