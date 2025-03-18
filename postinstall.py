@@ -31,7 +31,7 @@ opt_pkgs_names = [
 
     "go",
     "delve",
-    "go-mockery",
+    "mockery",
     "gopls",
     "jdk-openjdk",
 
