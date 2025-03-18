@@ -8,11 +8,9 @@ class paru:
         def run_command(command):
             return subprocess.run(command, shell=True, check=True, text=True)
         try:
-            run_command("cd /tmp")
-            dir=f"paru{int(time.time())}"
+            dir=f"/tmp/paru{int(time.time())}"
             run_command(f"git clone https://aur.archlinux.org/paru.git {dir}")
-            run_command(f"cd {dir}")
-            run_command("makepkg -si")
+            run_command(f"makepkg -si -D {dir}")
             print("Скрипт выполнен успешно.")
         except subprocess.CalledProcessError as e:
             print(f"Ошибка при выполнении команды: {e}")    
