@@ -8,10 +8,10 @@ pacman.setup()
 pacman.install(base_pkg_names)
 
 # Get pacman wrapper
-# pacman.install([rustup.pkg_name])
-# rustup.setup()
-# paru.get()
-# paru.setup()
+pacman.install([rustup.pkg_name])
+rustup.setup()
+paru.get()
+paru.setup()
 
 # Install opt packages
 opt_pkgs = [
