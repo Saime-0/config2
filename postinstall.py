@@ -27,6 +27,14 @@ opt_pkgs = [
     alacritty,
 ]
 opt_pkgs_names = [
+    "ly",
+    
+    "go",
+    "delve",
+    "go-mockery",
+    "gopls",
+    "jdk",
+
     "qbittorrent",
     "golangci-lint",
     "obs-studio",

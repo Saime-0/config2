@@ -14,4 +14,4 @@ class terminus_font:
         with open(config_src, 'r') as file:
             content = file.read()
 
-        subprocess.run(f'sudo tee {config_dst}', input=content.encode(), check=True)
+        subprocess.run(['sudo', 'tee', config_dst], input=content.encode(), check=True)
