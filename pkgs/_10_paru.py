@@ -26,11 +26,14 @@ class paru:
                 needed: bool = True,
                 sysroot: str = None,
                 ) -> bool:
-        cmd = [paru.bin(), "-Sy"] + packages
-        if no_confirm: cmd.append("--noconfirm")
-        if needed: cmd.append("--needed")
-        if sysroot: cmd.append(f"--sysroot={sysroot}")
-        subprocess.run(cmd)
+        subprocess.run([
+            paru.bin,
+            "-Sy",
+            *packages,
+            "--noconfirm" if no_confirm else ""
+            "--needed" if needed else ""
+            f"--sysroot={sysroot}" if sysroot else ""
+        ], shell=True, check=True, text=True)
 
     def setup():
         print("paru:setup:TODO")
