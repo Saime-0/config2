@@ -2,16 +2,30 @@
 
 import pkgs
 import lib
+import os
+
+pkgs.pacman.setup()
+pkgs.pacman.install(
+    packages=pkgs.base_packages,
+    no_confirm=True,
+    needed=True,
+    sysroot=os.path("/mnt"),
+)
 
 pkgs.paru.get()
 pkgs.paru.setup()
 
-pkgs_for_install = pkgs.base_packages + [
+pkgs_for_install = [
     pkgs.vscode,
     # pkgs.dummy
 ]
 
-lib.get_package_manager(pkgs).install(pkgs_for_install)
+pkgs.paru.install(
+    packages=pkgs_for_install,
+    no_confirm=True,
+    needed=True,
+    sysroot=os.path("/mnt"),
+)
 
 for p in pkgs_for_install:
     if hasattr(p, 'setup') and callable(getattr(p, 'setup')):

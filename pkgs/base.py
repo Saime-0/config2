@@ -1,8 +1,9 @@
 from lib.package import Package
 
 packages: list[Package] = [
+      Package("sudo"),
       Package("rsync"),
-      Package("p7zip"),
+      Package("7zip"),
       Package("ncdu"),
       Package("unrar"),
       Package("zip"),
