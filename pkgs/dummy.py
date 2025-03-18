@@ -1,6 +1,6 @@
 class dummy:
     def id() -> str:
-        "dummy"
+        return "dummy"
 
     def setup():
         print("dummy: setup: ok")

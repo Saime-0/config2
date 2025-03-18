@@ -3,9 +3,11 @@
 import pkgs
 import lib
 
-packages=[
-    # pkgs.vscode
-    pkgs.dummy
+pkgs.paru.get()
+
+packages = pkgs.base_packages + [
+    pkgs.vscode,
+    # pkgs.dummy
 ]
 
 lib.get_package_manager(pkgs).install(packages)

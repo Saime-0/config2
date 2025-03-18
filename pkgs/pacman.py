@@ -2,6 +2,9 @@ import os
 from lib.package import Package
 
 class pacman:
+    def id()->str:
+        return "pacman"
+    
     def bin()->str:
         return "pacman"
         

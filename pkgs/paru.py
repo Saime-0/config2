@@ -1,0 +1,30 @@
+import os
+from lib.package import Package
+import subprocess
+import time
+
+class paru:
+    def get():
+        def run_command(command):
+            return subprocess.run(command, shell=True, check=True, text=True)
+        try:
+            run_command("cd /tmp")
+            run_command("sudo pacman -S --needed base-devel")
+            dir=str(int(time.time()))
+            run_command(f"git clone https://aur.archlinux.org/paru.git {dir}")
+            run_command(f"cd {dir}")
+            run_command("makepkg -si")
+            print("Скрипт выполнен успешно.")
+        except subprocess.CalledProcessError as e:
+            print(f"Ошибка при выполнении команды: {e}")    
+
+    def id()->str:
+        return "paru"
+    
+    def bin()->str:
+        return "paru"
+        
+    def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: os.path = "/") -> bool:
+        print(f"{id} -> install: ok")
+
+from pkgs.list import list as pkgs_list; pkgs_list.append(paru)

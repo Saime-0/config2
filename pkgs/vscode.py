@@ -20,13 +20,13 @@ extensions = [
 ]
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-config_src = os.path.join(script_dir, "../../dotfiles/.config/Code/User/settings.json")
+config_src = os.path.join(script_dir, "../dotfiles/.config/Code/User/settings.json")
 config_dir=os.path.expanduser("~/.config/Code/User")
 config_file=os.path.join(config_dir,"settings.json")
-
-class vscode:
+# from  lib.package import Package
+class vscode():
     def id() -> str:
-        "vscode"
+        return "vscode"
 
     def setup():
         # Скопировать конфиг
