@@ -9,9 +9,9 @@ class pacman:
                 packages: list[str],
                 no_confirm: bool = True, 
                 needed: bool = True,
-                sysroot: str = "/",
+                sysroot: str = None,
                 ) -> bool:
-        cmd = ["sudo", pacman.bin, "-Sy", ' '.join(packages)]
+        cmd = ["sudo", pacman.bin, "-Sy"] + packages
         if no_confirm: cmd.append("--noconfirm")
         if needed: cmd.append("--needed")
         if sysroot: cmd.append(f"--sysroot={sysroot}")
