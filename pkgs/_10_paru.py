@@ -6,15 +6,9 @@ class paru:
     pkg_name = "paru"
 
     def get():
-        def run_command(command):
-            return subprocess.run(command, shell=True, check=True, text=True)
-        try:
-            dir=f"/tmp/paru{int(time.time())}"
-            run_command(f"git clone https://aur.archlinux.org/paru.git {dir}")
-            run_command(f"makepkg -si -D {dir}")
-            print("Скрипт выполнен успешно.")
-        except subprocess.CalledProcessError as e:
-            print(f"Ошибка при выполнении команды: {e}")    
+        dir=f"/tmp/paru{int(time.time())}"
+        subprocess.run(f"git clone https://aur.archlinux.org/paru.git {dir}", shell=True, check=True, text=True)
+        subprocess.run(f"makepkg -si -D {dir}", shell=True, check=True, text=True) 
 
     
     def bin()->str:

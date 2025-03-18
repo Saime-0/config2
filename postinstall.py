@@ -8,6 +8,8 @@ pkgs.pacman.setup()
 pkgs.pacman.install(pkgs.base_pkg_names)
 
 # Get pacman wrapper
+pkgs.pacman.install([pkgs.rustup.pkg_name])
+pkgs.rustup.setup()
 pkgs.paru.get()
 pkgs.paru.setup()
 

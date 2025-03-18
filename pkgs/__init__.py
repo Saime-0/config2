@@ -5,3 +5,4 @@ from pkgs._15_pacman import pacman
 from pkgs.vscode import vscode
 from pkgs.dummy import dummy
 from pkgs._10_paru import paru
+from pkgs.rustup import rustup
