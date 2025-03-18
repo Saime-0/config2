@@ -1,12 +1,8 @@
 #!/bin/python
 
 import pkgs
-import subprocess
 
 pkgs.pacman.setup()
-# subprocess.run(' '.join(['sudo', 'pacman', '-Sy', 'base-devel', 'bash-completion', 'sudo', 'rsync', '7zip', 'ncdu', 'unrar', 'zip', 'unzip', 'ntfs-3g', 'neofetch', 'git', 'networkmanager', '--noconfirm', '--needed', '']),
-#                 shell=True, check=True, text=True,capture_output=True)
-
 
 # Install base packages
 pkgs.pacman.install(pkgs.base_pkg_names)

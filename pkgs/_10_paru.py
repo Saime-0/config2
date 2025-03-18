@@ -26,14 +26,14 @@ class paru:
                 needed: bool = True,
                 sysroot: str = None,
                 ) -> bool:
-        subprocess.run([
+        subprocess.run(' '.join([
             paru.bin,
             "-Sy",
             *packages,
             "--noconfirm" if no_confirm else "",
             "--needed" if needed else "",
             f"--sysroot={sysroot}" if sysroot else "",
-        ], shell=True, check=True, text=True)
+        ]), shell=True, check=True, text=True)
 
     def setup():
         print("paru:setup:TODO")
