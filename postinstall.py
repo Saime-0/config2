@@ -1,23 +1,23 @@
 #!/bin/python
 
-import pkgs
+from pkgs import *
 
-pkgs.pacman.setup()
+pacman.setup()
 
 # Install base packages
-pkgs.pacman.install(pkgs.base_pkg_names)
+pacman.install(base_pkg_names)
 
 # Get pacman wrapper
-pkgs.pacman.install([pkgs.rustup.pkg_name])
-pkgs.rustup.setup()
-pkgs.paru.get()
-pkgs.paru.setup()
+pacman.install([rustup.pkg_name])
+rustup.setup()
+paru.get()
+paru.setup()
 
 # Install opt packages
 opt_pkgs = [
-    pkgs.vscode,
+    vscode,
 ]
-pkgs.paru.install([p.pkg_name for p in opt_pkgs])
+paru.install([p.pkg_name for p in opt_pkgs])
 
 # Setup opt packages
 for p in opt_pkgs:

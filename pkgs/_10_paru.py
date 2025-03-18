@@ -4,15 +4,12 @@ import time
 
 class paru:
     pkg_name = "paru"
+    bin = "paru"
 
     def get():
         dir=f"/tmp/paru{int(time.time())}"
         subprocess.run(f"git clone https://aur.archlinux.org/paru.git {dir}", shell=True, check=True, text=True)
         subprocess.run(f"makepkg -si -D {dir}", shell=True, check=True, text=True) 
-
-    
-    def bin()->str:
-        return "paru"
         
     def install(
                 packages: list[str],
