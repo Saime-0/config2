@@ -1,11 +1,11 @@
 import os
 from lib.package import Package
 
-class nix:
+class pacman:
     def bin()->str:
-        return "nix"
+        return "pacman"
         
     def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: os.path = "/") -> bool:
-        print(f"{id} -> install: pkgs={packages}: ok")
-        
-from pkgs.list import list as pkgs_list; pkgs_list.append(nix)
+        print(f"{id} -> install: ok")
+
+from pkgs.list import list as pkgs_list; pkgs_list.append(pacman)

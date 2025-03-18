@@ -1,12 +1,15 @@
 #!/bin/python
 
-from enum import Enum
-# class Distr(Enum):
-#     BASE = 1
-#     XFCE = 
-
-
 import pkgs
+import lib
 
-pkgs.vscode.install()
-pkgs.vscode.setup()
+packages=[
+    # pkgs.vscode
+    pkgs.dummy
+]
+
+lib.get_package_manager(pkgs).install(packages)
+
+for p in packages:
+    if hasattr(p, 'setup') and callable(getattr(p, 'setup')):
+        p.setup()
