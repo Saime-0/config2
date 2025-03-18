@@ -12,15 +12,14 @@ echo "Clearing the partition table ..."
 sfdisk --delete $DEVICE
 
 echo "Create partitions ..."
-parted --script ${DEVICE} -- \
-       mklabel gpt \
-       mkpart esp fat32 1MiB 512MiB \
-       mkpart primary 512MiB 100% \
-       set 1 boot on
+parted --script ${DEVICE} -- mklabel gpt 
+parted --script ${DEVICE} -- mkpart esp fat32 1MiB 512MiB 
+parted --script ${DEVICE} -- mkpart primary 512MiB 100% 
+parted --script ${DEVICE} -- set 1 boot on
 
 echo "Formatting partitions ..."
 mkfs.fat -F 32 ${DEVICE}1  # EFI раздел
-fatlabel /dev/sda1 BOOT
+fatlabel /dev/${DEVICE}1 BOOT
 mkfs.ext4 ${DEVICE}2 -L ROOT      # Root раздел
 
 echo "Mounting partitions ..."
