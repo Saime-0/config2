@@ -1,5 +1,3 @@
-import os
-
 class PackageManager:
     @property
     def bin() -> str:
