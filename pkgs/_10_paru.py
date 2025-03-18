@@ -30,9 +30,9 @@ class paru:
             paru.bin,
             "-Sy",
             *packages,
-            "--noconfirm" if no_confirm else ""
-            "--needed" if needed else ""
-            f"--sysroot={sysroot}" if sysroot else ""
+            "--noconfirm" if no_confirm else "",
+            "--needed" if needed else "",
+            f"--sysroot={sysroot}" if sysroot else "",
         ], shell=True, check=True, text=True)
 
     def setup():
