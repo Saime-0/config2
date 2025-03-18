@@ -2,6 +2,7 @@ from lib.package import Package
 
 packages: list[Package] = [
       Package("base-devel"),
+      Package("bash-completion"),
       Package("sudo"),
       Package("rsync"),
       Package("7zip"),

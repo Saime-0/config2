@@ -2,5 +2,5 @@
 
 set -e
 login=okg0
-useradd -m -G $login
+useradd -m -G wheel $login
 passwd $login
