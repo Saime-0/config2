@@ -19,18 +19,16 @@ extensions = [
     "yzhang.markdown-all-in-one",
 ]
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
-config_src = os.path.join(script_dir, "../dotfiles/.config/Code/User/settings.json")
-config_dir=os.path.expanduser("~/.config/Code/User")
-config_file=os.path.join(config_dir,"settings.json")
-# from  lib.package import Package
+script_parent = os.path.dirname(os.path.abspath(__file__))
+config_src = os.path.join(script_parent, "../dotfiles/.config/Code")
+config_dst = os.path.expanduser("~/.config/Code")
+
 class vscode():
     pkg_name = "vscode"
 
     def setup():
         # Скопировать конфиг
-        os.makedirs(config_dir, exist_ok=True)
-        shutil.copy2(config_src, config_file)
+        shutil.copytree(config_src, config_dst, dirs_exist_ok=True)
 
         # Установка расширений
         for ext in extensions:

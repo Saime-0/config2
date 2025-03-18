@@ -10,7 +10,11 @@ pkg_names: list[str] = [
       "unzip",
       "ntfs-3g",
       "neofetch",
+      "htop",
+      "btop",
+      "openssh",
       
       "git",
       "networkmanager",
+      "networkmanager-openvpn",
 ]

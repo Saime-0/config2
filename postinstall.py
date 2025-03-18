@@ -13,11 +13,26 @@ rustup.setup()
 paru.get()
 paru.setup()
 
+#fonts
+paru.install(fonts_pkg_names)
+
+# de
+paru.install(xfce.pkg_names)
+xfce.setup()
+
 # Install opt packages
 opt_pkgs = [
     vscode,
+    terminus_font,
+    alacritty,
 ]
-paru.install([p.pkg_name for p in opt_pkgs])
+opt_pkgs_names = [
+    "qbittorrent",
+    "golangci-lint",
+    "obs-studio",
+    "libreoffice-still",
+] + [p.pkg_name for p in opt_pkgs]
+paru.install(opt_pkgs_names)
 
 # Setup opt packages
 for p in opt_pkgs:
