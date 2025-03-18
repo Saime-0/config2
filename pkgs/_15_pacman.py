@@ -11,7 +11,7 @@ class pacman:
                 needed: bool = True,
                 sysroot: str = None,
                 ) -> bool:
-        subprocess.run([
+        subprocess.run(' '.join([
             "sudo",
             pacman.bin,
             "-Sy",
@@ -19,7 +19,7 @@ class pacman:
             "--noconfirm" if no_confirm else "",
             "--needed" if needed else "",
             f"--sysroot={sysroot}" if sysroot else "",
-        ], shell=True, check=True, text=True)
+        ]), shell=True, check=True, text=True)
 
     def setup():
         print("pacman:setup:TODO")
