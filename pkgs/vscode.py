@@ -24,15 +24,15 @@ config_src = os.path.join(script_dir, "../../dotfiles/.config/Code/User/settings
 config_dir=os.path.expanduser("~/.config/Code/User")
 config_file=os.path.join(config_dir,"settings.json")
 
-def _install_extensions():
-    for ext in extensions:
-        subprocess.run(["code", "--install-extension", ext])
+class vscode:
+    def id() -> str:
+        "vscode"
 
-def _copy_config():
-    os.makedirs(config_dir, exist_ok=True)
-    shutil.copy2(config_src, config_file)
+    def setup():
+        # Скопировать конфиг
+        os.makedirs(config_dir, exist_ok=True)
+        shutil.copy2(config_src, config_file)
 
-
-def setup():
-    _copy_config()
-    _install_extensions()
+        # Установка расширений
+        for ext in extensions:
+            subprocess.run(["code", "--install-extension", ext])
