@@ -25,6 +25,7 @@ opt_pkgs = [
     vscode,
     terminus_font,
     alacritty,
+    helix,
 ]
 opt_pkgs_names = [
     "ly",
