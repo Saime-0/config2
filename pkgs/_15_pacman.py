@@ -10,7 +10,7 @@ class pacman:
         return "pacman"
         
     def install(packages: list[Package], no_confirm: bool = False, needed: bool = False, sysroot: os.path = "/") -> bool:
-        cmd = [pacman.bin(), "-Sy"]
+        cmd = ["sudo", pacman.bin(), "-Sy"]
         if no_confirm: cmd.append("--noconfirm")
         if needed: cmd.append("--needed")
         if sysroot: cmd.append(f"--sysroot={sysroot}")

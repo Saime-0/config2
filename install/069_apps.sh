@@ -1,5 +1,3 @@
 #!/bin/bash
 
-pacman -Syu --noconfirm --sysroot /mnt
-
-pacman -S git networkmanager
+pacman -Sy git networkmanager python sudo --noconfirm --needed --sysroot /mnt

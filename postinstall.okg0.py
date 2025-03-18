@@ -11,14 +11,18 @@ pkgs.pacman.install(
     needed=True,
 )
 
+# login="okg0"
+# lib.create_user(
+#     login=login,
+#     groups=["sudo", "networkmanager", "uinput"]
+# )
+
 pkgs.paru.get()
 pkgs.paru.setup()
-
 pkgs_for_install = [
     pkgs.vscode,
     # pkgs.dummy
 ]
-
 pkgs.paru.install(
     packages=pkgs_for_install,
     no_confirm=True,
