@@ -15,7 +15,7 @@ extensions = [
     "ms-python.python",
     "ms-python.vscode-pylance",
     "r3inbowari.gomodexplorer",
-    "streetsidesoftware.code-spell-checker",
+    # "streetsidesoftware.code-spell-checker",
     "yzhang.markdown-all-in-one",
 ]
 
