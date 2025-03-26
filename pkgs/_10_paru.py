@@ -1,6 +1,10 @@
 import os
 import subprocess
-import time
+import shutil
+
+script_parent = os.path.dirname(os.path.abspath(__file__))
+config_src = os.path.join(script_parent, "../dotfiles/.config/paru")
+config_dst = os.path.expanduser("~/.config/paru")
 
 class paru:
     pkg_name = "paru"
@@ -27,4 +31,5 @@ class paru:
         ]), shell=True, check=True, text=True)
 
     def setup():
-        print("paru:setup:TODO")
+        # Скопировать конфиг
+        shutil.copytree(config_src, config_dst)

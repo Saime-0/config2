@@ -1,5 +1,10 @@
 import os
 import subprocess
+import shutil
+
+script_parent = os.path.dirname(os.path.abspath(__file__))
+config_src = os.path.join(script_parent, "../dotfiles/.config/pacman.conf")
+config_dst = os.path.expanduser("~/.config/pacman.conf")
 
 class pacman:
     pkg_name = "pacman"
@@ -22,4 +27,5 @@ class pacman:
         ]), shell=True, check=True, text=True)
 
     def setup():
-        print("pacman:setup:TODO")
+        # Скопировать конфиг
+        shutil.copy2(config_src, config_dst)
