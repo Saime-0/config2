@@ -27,12 +27,15 @@ opt_pkgs = [
     alacritty,
     helix,
     ly,
+    bluetooth,
+    xdg_user_dirs,
+    bash,
 ]
 opt_pkgs_names = [
-    "xorg",
-    "fluent-gtk-theme",
-    "gruvbox-dark-icons-gtk",
-    "elementary-icon-theme",
+    # Внешний вид:
+    "fluent-gtk-theme", # Тема оконного менеджера
+    "gruvbox-dark-icons-gtk", # Иконки
+    "elementary-icon-theme", # Курсор
 
     "go",
     "delve",

@@ -8,6 +8,7 @@ config_dst=os.path.expanduser("~/.config/xfce4")
 
 class xfce:
     pkg_names = [
+        "xorg",
         "exo", # Библиотеки и утилиты для управления файлами и приложениями
         "garcon", #	Меню-система для XFCE (интеграция с приложениями)	Да
         # thunar	Файловый менеджер по умолчанию для XFCE	Да

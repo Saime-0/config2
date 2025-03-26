@@ -9,3 +9,6 @@ from pkgs.terminus_font import terminus_font
 from pkgs.xfce import xfce
 from pkgs.alacritty import alacritty
 from pkgs.ly import ly
+from pkgs.bluetooth import bluetooth
+from pkgs.bash import bash
+from pkgs.xdg_user_dirs import xdg_user_dirs
