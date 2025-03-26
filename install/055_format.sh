@@ -8,7 +8,15 @@ if [ ! -e "$DEVICE" ]; then
   exit 1
 fi
 
+# Определяем суффикс раздела
+DEVICE_NAME=$(basename "$DEVICE")
+if [[ "$DEVICE_NAME" == nvme* ]]; then
+    PART_SUFFIX="p"
+else
+    PART_SUFFIX=""
+fi
+
 echo "Formatting partitions ..."
-mkfs.fat -F 32 ${DEVICE}1  # EFI раздел
-fatlabel ${DEVICE}1 BOOT
-mkfs.ext4 ${DEVICE}2 -L ROOT      # Root раздел
+mkfs.fat -F 32 "${DEVICE}${PART_SUFFIX}1"  # EFI раздел
+fatlabel "${DEVICE}${PART_SUFFIX}1" BOOT
+mkfs.ext4 "${DEVICE}${PART_SUFFIX}2" -L ROOT      # Root раздел

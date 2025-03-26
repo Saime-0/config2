@@ -17,4 +17,7 @@ parted --script ${DEVICE} -- mkpart esp fat32 1MiB 512MiB
 parted --script ${DEVICE} -- mkpart primary 512MiB 100%
 parted --script ${DEVICE} -- set 1 boot on
 
+# Даем время системе обновить информацию о разделах
+sleep 2
+
 echo "The disk partition is complete."
