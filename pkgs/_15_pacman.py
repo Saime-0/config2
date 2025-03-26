@@ -1,10 +1,6 @@
 import os
 import subprocess
-import shutil
 
-script_parent = os.path.dirname(os.path.abspath(__file__))
-config_src = os.path.join(script_parent, "../dotfiles/.config/pacman.conf")
-config_dst = os.path.expanduser("~/.config/pacman.conf")
 
 class pacman:
     pkg_name = "pacman"
@@ -27,5 +23,5 @@ class pacman:
         ]), shell=True, check=True, text=True)
 
     def setup():
-        # Скопировать конфиг
-        shutil.copy2(config_src, config_dst)
+        subprocess.run("sudo sed -i 's/#Color/Color/' /etc/pacman.conf", shell=True, check=True, text=True)
+        subprocess.run("sudo sed -i 's/^#\?ParallelDownloads = .*/ParallelDownloads = 6/' /etc/pacman.conf", shell=True, check=True, text=True)
