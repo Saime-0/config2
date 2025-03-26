@@ -30,9 +30,9 @@ opt_pkgs = [
 ]
 opt_pkgs_names = [
     "xorg",
-    "fluent-gtk-theme"
-    "gruvbox-dark-icons-gtk"
-    "elementary-icon-theme"
+    "fluent-gtk-theme",
+    "gruvbox-dark-icons-gtk",
+    "elementary-icon-theme",
 
     "go",
     "delve",
