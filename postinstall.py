@@ -43,6 +43,7 @@ opt_pkgs_names = [
     "gopls",
     "jdk-openjdk",
 
+    "pcmanfm",
     "qbittorrent",
     "golangci-lint",
     "obs-studio",
