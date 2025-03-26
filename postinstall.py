@@ -44,6 +44,9 @@ opt_pkgs_names = [
     "jdk-openjdk",
 
     "pcmanfm",
+    "gvfs",
+
+    "xarchiver",
     "qbittorrent",
     "golangci-lint",
     "obs-studio",

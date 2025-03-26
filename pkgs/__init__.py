@@ -12,3 +12,4 @@ from pkgs.ly import ly
 from pkgs.bluetooth import bluetooth
 from pkgs.bash import bash
 from pkgs.xdg_user_dirs import xdg_user_dirs
+from pkgs.pcmanfm import pcmanfm
