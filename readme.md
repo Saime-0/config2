@@ -8,7 +8,11 @@ DEVICE=/dev/sdx ./install.sh
 
 ### postinstall
 
+1. Скопировать директорию config2 в /mnt/home/okg0
+2. Перезагрузиться в систему либо из arch-chroot выполнить
+
 ```sh
+su okg0
 ./postinstall.py
 ```
 
