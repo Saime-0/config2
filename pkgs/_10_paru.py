@@ -1,6 +1,7 @@
 import os
 import subprocess
 import shutil
+import time
 
 script_parent = os.path.dirname(os.path.abspath(__file__))
 config_src = os.path.join(script_parent, "../dotfiles/.config/paru")
