@@ -51,6 +51,7 @@ opt_pkgs_names = [
     "golangci-lint",
     "obs-studio",
     "libreoffice-still",
+    "telegram-desktop",
 ] + [p.pkg_name for p in opt_pkgs]
 paru.install(opt_pkgs_names)
 
