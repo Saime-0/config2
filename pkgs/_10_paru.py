@@ -14,7 +14,7 @@ class paru:
     def get():
         dir=f"/tmp/paru{int(time.time())}"
         subprocess.run(f"git clone https://aur.archlinux.org/paru.git {dir}", shell=True, check=True, text=True)
-        subprocess.run(f"makepkg -si -D {dir}", shell=True, check=True, text=True) 
+        subprocess.run(f"makepkg -si --noconfirm -D {dir}", shell=True, check=True, text=True) 
         
     def install(
                 packages: list[str],
