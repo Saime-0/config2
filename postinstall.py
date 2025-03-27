@@ -13,12 +13,10 @@ rustup.setup()
 paru.get()
 paru.setup()
 
-#fonts
-paru.install(fonts_pkg_names)
-
 # de
-paru.install(xfce.pkg_names)
+paru.install(xfce.pkg_names + fonts_pkg_names + sound_pkg_names)
 xfce.setup()
+
 
 # Install opt packages
 opt_pkgs = [
