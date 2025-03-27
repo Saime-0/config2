@@ -30,6 +30,7 @@ opt_pkgs = [
     bluetooth,
     xdg_user_dirs,
     bash,
+    gnome_keyring,
 ]
 opt_pkgs_names = [
     # Внешний вид:
