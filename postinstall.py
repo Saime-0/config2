@@ -62,6 +62,7 @@ for p in opt_pkgs:
         p.setup()
 
 
+
 # TODO: Переписать на декларативный вариант:
 # def get_or_install_and_setup(*package_groups: list[str | object] | object | str):
 #     def one(p: object | str):
