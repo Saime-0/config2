@@ -8,3 +8,4 @@ export EDITOR=helix
 HISTCONTROL=ignoreboth:erasedups
 
 alias goci='go vet ./... && golangci-lint run -v -j $(( $(nproc) - 1))'
+alias ip='ip -c'
