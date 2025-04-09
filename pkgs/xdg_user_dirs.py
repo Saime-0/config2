@@ -14,6 +14,8 @@ class xdg_user_dirs:
         # Скопировать конфиг
         shutil.copy2(config_src, config_dst)
         # Сгеренировать директории
+        subprocess.run('mkdir downloads', shell=True, check=True, text=True)
+        subprocess.run('ln -s downloads Downloads', shell=True, check=True, text=True)
         subprocess.run('xdg-user-dirs-update', shell=True, check=True, text=True)
         
 
