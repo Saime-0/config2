@@ -26,3 +26,4 @@ su okg0
 - [ ] Реализовать использование postinstall в cli для установки или настройки единичных пакетов
 - [ ] Включать синхронизацию времени через интернет
 - [ ] Включить multilib
+- [ ] настройка udisks2 для org.freedesktop.udisks2.filesystem-mount-system без пароля
